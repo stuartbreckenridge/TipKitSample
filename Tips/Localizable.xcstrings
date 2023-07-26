@@ -1,0 +1,94 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "action.title.dismiss" : {
+      "comment" : "Dismiss",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dismiss"
+          }
+        }
+      }
+    },
+    "action.title.find-out-more" : {
+      "comment" : "Find Out More",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Find Out More"
+          }
+        }
+      }
+    },
+    "action.title.try-now" : {
+      "comment" : "Try Now",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try Now"
+          }
+        }
+      }
+    },
+    "button.title.pick-numbers" : {
+      "comment" : "Pick Numbers",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick Numbers"
+          }
+        }
+      }
+    },
+    "tip.message.generated-numbers" : {
+      "comment" : "Generated Numbers Tip Message",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "These numbers are generated using `GKRandomDistribution`: a generator for random numbers that fall within a specific range and that exhibit a specific distribution over multiple samplings."
+          }
+        }
+      }
+    },
+    "tip.message.pick.numbers" : {
+      "comment" : "Pick Numbers Tip Message",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap this button to pick a set of six random numbers between 1 and 59."
+          }
+        }
+      }
+    },
+    "tip.title.generated-numbers" : {
+      "comment" : "Generated Numbers Tip Title",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About Generated Numbers"
+          }
+        }
+      }
+    },
+    "tip.title.pick-numbers" : {
+      "comment" : "Pick Numbers Tip Title",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick Your Numbers"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
