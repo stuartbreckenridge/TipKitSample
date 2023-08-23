@@ -15,10 +15,8 @@ struct TipsApp: App {
         WindowGroup {
             ContentView()
                 .task {
-                    try? await Tips.configure {
-                        DatastoreLocation(ApplicationTipConfiguration.storeLocation)
-                        ApplicationTipConfiguration.displayFrequency
-                    }
+                    try? Tips.configure([.datastoreLocation(ApplicationTipConfiguration.storeLocation),
+                                               .displayFrequency(ApplicationTipConfiguration.displayFrequency)])
                 }
         }
     }

@@ -25,10 +25,10 @@ struct ContentView: View {
             }
             .popoverTip(generatedNumbersTip, arrowEdge: .top) { action in
                 if action.id == "action.title.dismiss" {
-                    generatedNumbersTip.invalidate(reason: .userClosedTip)
+                    generatedNumbersTip.invalidate(reason: .tipClosed)
                 }
                 if action.id == "action.title.find-out-more" {
-                    generatedNumbersTip.invalidate(reason: .userPerformedAction)
+                    generatedNumbersTip.invalidate(reason: .actionPerformed)
                     UIApplication.shared.open(URL(string: "https://developer.apple.com/documentation/gameplaykit/gkrandomdistribution")!)
                 }
             }
@@ -38,21 +38,25 @@ struct ContentView: View {
                 viewModel.latestNumbers = LottoGenerator.new()
                 PickNumbersTip.hasGeneratedNumbers = true
                 GeneratedNumbersTip.hasGeneratedNumbers = true
-                GeneratedNumbersTip.countOfGeneratedNumbers.donate()
+                Task {
+                    await GeneratedNumbersTip.countOfGeneratedNumbers.donate()
+                }
             }, label: {
                 Text("button.title.pick-numbers", comment: "Pick Numbers")
             })
             .buttonStyle(.borderedProminent)
             .popoverTip(pickNumbersTip, arrowEdge: .bottom) { action in
                 if action.id == "action.title.dismiss" {
-                    pickNumbersTip.invalidate(reason: .userClosedTip)
+                    pickNumbersTip.invalidate(reason: .tipClosed)
                 }
                 if action.id == "action.title.try-now" {
-                    pickNumbersTip.invalidate(reason: .userPerformedAction)
+                    pickNumbersTip.invalidate(reason: .actionPerformed)
                     PickNumbersTip.hasGeneratedNumbers = true
                     viewModel.latestNumbers = LottoGenerator.new()
                     GeneratedNumbersTip.hasGeneratedNumbers = true
-                    GeneratedNumbersTip.countOfGeneratedNumbers.donate()
+                    Task {
+                        await GeneratedNumbersTip.countOfGeneratedNumbers.donate()
+                    }
                 }
             }
         }

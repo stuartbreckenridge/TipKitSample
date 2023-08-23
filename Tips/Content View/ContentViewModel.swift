@@ -13,7 +13,4 @@ public class ContentViewModel {
     
     var latestNumbers: [Int] = []
     
-    
-    
-    
 }
