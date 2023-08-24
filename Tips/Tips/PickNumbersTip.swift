@@ -7,6 +7,16 @@
 
 import TipKit
 
+
+/// The `PickNumbersTip` is attached to a `Button` and provides a Tip that explains
+/// what the `Button` does.
+///
+/// ## Rules
+/// - This tip is eligible for display when the user hasn't generated any numbers: `hasGeneratedNumbers`
+/// must be `false`.
+///
+/// ## Options
+/// - This tip will display a maximum of one time.
 public struct PickNumbersTip: Tip {
     
     @Parameter
@@ -42,7 +52,7 @@ public struct PickNumbersTip: Tip {
     }
     
     public var rules: [Rule] {
-        #Rule(Self.$hasGeneratedNumbers) { $0 == false } // User has never generated numbers, which makes this tip eligible for display.
+        #Rule(Self.$hasGeneratedNumbers) { $0 == false }
     }
     
     public var options: [TipOption] {

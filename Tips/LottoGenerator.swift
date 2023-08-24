@@ -8,6 +8,8 @@
 import Foundation
 import GameplayKit
 
+
+/// The `LottoGenerator` has one function, `new()`, which returns an ordered array of random numbers betwwen 1 and 59.
 public struct LottoGenerator {
     
     /// Generate a random array of numbers, in the range of 1 - 59.

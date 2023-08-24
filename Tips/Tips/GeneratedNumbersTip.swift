@@ -7,10 +7,18 @@
 
 import TipKit
 
+
+/// The `GeneratedNumbersTip` displays a tip which describes how the random numbers
+/// were generated.
+///
+/// ## Rules
+/// - This tip is eligible for display when the `PickNumbersTip.hasGeneratedNumbers` `Bool` is `true`, and
+/// - The user has generated numbers twice, which is counted via `donate()` calls to
+/// `GeneratedNumbersTip.countOfGeneratedNumbers.donate()`
+///
+/// ## Options
+/// - This tip will display a maximum of one time.
 public struct GeneratedNumbersTip: Tip {
-    
-    @Parameter
-    static var hasGeneratedNumbers: Bool = false
     
     static let countOfGeneratedNumbers: Event = Event<Tips.EmptyDonation>(id: "tip.event.user-generated-numbers")
     
@@ -43,8 +51,8 @@ public struct GeneratedNumbersTip: Tip {
     }
     
     public var rules: [Rule] {
-        #Rule(Self.$hasGeneratedNumbers) { $0 == true } // User has generated numbers, which makes this tip eligible for display.
-        #Rule(Self.countOfGeneratedNumbers) { $0.donations.count == 2 } // This tip displays after the user has generated numbers twice.
+        #Rule(PickNumbersTip.$hasGeneratedNumbers) { $0 == true }
+        #Rule(Self.countOfGeneratedNumbers) { $0.donations.count == 2 }
     }
     
     public var options: [TipOption] {

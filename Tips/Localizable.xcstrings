@@ -9,6 +9,12 @@
             "state" : "translated",
             "value" : "Dismiss"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer"
+          }
         }
       }
     },
@@ -19,6 +25,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Find Out More"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En savoir plus"
           }
         }
       }
@@ -31,6 +43,12 @@
             "state" : "translated",
             "value" : "Try Now"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essayez maintenant"
+          }
         }
       }
     },
@@ -41,6 +59,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pick Numbers"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez des numéros"
           }
         }
       }
@@ -53,6 +77,12 @@
             "state" : "translated",
             "value" : "These numbers are generated using `GKRandomDistribution`: a generator for random numbers that fall within a specific range and that exhibit a specific distribution over multiple samplings."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ces nombres sont générés à l'aide de « GKRandomDistribution » : un générateur de nombres aléatoires qui se situent dans une plage spécifique et qui présentent une distribution spécifique sur plusieurs échantillonnages."
+          }
         }
       }
     },
@@ -63,6 +93,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tap this button to pick a set of six random numbers between 1 and 59."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez sur ce bouton pour choisir un ensemble de six nombres aléatoires compris entre 1 et 59."
           }
         }
       }
@@ -75,6 +111,12 @@
             "state" : "translated",
             "value" : "About Generated Numbers"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À propos des numéros générés"
+          }
         }
       }
     },
@@ -85,6 +127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pick Your Numbers"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez vos numéros"
           }
         }
       }

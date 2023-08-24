@@ -16,6 +16,7 @@ struct ContentView: View {
     private var generatedNumbersTip = GeneratedNumbersTip()
     
     var body: some View {
+        let _ = Self._printChanges()
         VStack {
             
             HStack {
@@ -23,7 +24,7 @@ struct ContentView: View {
                     BallView(number: viewModel.latestNumbers[i])
                 }
             }
-            .popoverTip(generatedNumbersTip, arrowEdge: .top) { action in
+            TipView(generatedNumbersTip, arrowEdge: .top) { action in
                 if action.id == "action.title.dismiss" {
                     generatedNumbersTip.invalidate(reason: .tipClosed)
                 }
@@ -31,21 +32,12 @@ struct ContentView: View {
                     generatedNumbersTip.invalidate(reason: .actionPerformed)
                     UIApplication.shared.open(URL(string: "https://developer.apple.com/documentation/gameplaykit/gkrandomdistribution")!)
                 }
+                    
             }
             
             Spacer()
-            Button(action: {
-                viewModel.latestNumbers = LottoGenerator.new()
-                PickNumbersTip.hasGeneratedNumbers = true
-                GeneratedNumbersTip.hasGeneratedNumbers = true
-                Task {
-                    await GeneratedNumbersTip.countOfGeneratedNumbers.donate()
-                }
-            }, label: {
-                Text("button.title.pick-numbers", comment: "Pick Numbers")
-            })
-            .buttonStyle(.borderedProminent)
-            .popoverTip(pickNumbersTip, arrowEdge: .bottom) { action in
+            
+            TipView(pickNumbersTip, arrowEdge: .bottom) { action in
                 if action.id == "action.title.dismiss" {
                     pickNumbersTip.invalidate(reason: .tipClosed)
                 }
@@ -53,12 +45,21 @@ struct ContentView: View {
                     pickNumbersTip.invalidate(reason: .actionPerformed)
                     PickNumbersTip.hasGeneratedNumbers = true
                     viewModel.latestNumbers = LottoGenerator.new()
-                    GeneratedNumbersTip.hasGeneratedNumbers = true
                     Task {
                         await GeneratedNumbersTip.countOfGeneratedNumbers.donate()
                     }
                 }
             }
+            Button(action: {
+                viewModel.latestNumbers = LottoGenerator.new()
+                PickNumbersTip.hasGeneratedNumbers = true
+                Task {
+                    await GeneratedNumbersTip.countOfGeneratedNumbers.donate()
+                }
+            }, label: {
+                Text("button.title.pick-numbers", comment: "Pick Numbers")
+            })
+            .buttonStyle(.borderedProminent)
         }
         .padding()
         .task {

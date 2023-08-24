@@ -18,8 +18,15 @@ struct TipsApp: App {
     }
     
     init() {
+        configureTips()
+    }
+    
+    /// Configure the application's available Tips.
+    ///
+    /// - seealso: `ApplicationTipConfiguration`
+    func configureTips() {
         try? Tips.configure([.datastoreLocation(ApplicationTipConfiguration.storeLocation),
-                                   .displayFrequency(ApplicationTipConfiguration.displayFrequency)])
+                             .displayFrequency(ApplicationTipConfiguration.displayFrequency)])
     }
     
 }

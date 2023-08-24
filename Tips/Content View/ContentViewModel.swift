@@ -8,8 +8,7 @@
 import Foundation
 import Observation
 
-@Observable
-public class ContentViewModel {
+@Observable public class ContentViewModel {
     
     var latestNumbers: [Int] = []
     
