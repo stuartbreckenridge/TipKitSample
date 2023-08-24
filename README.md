@@ -1,8 +1,8 @@
 #  Tips
 
-![TipKit](https://stuartbreckenridge.net/images/TipKit.png)
+![Screenshot showing TipKit in action.](https://github.com/stuartbreckenridge/TipKitSample/blob/main/TipKit.png?raw=true)
 
-This sample app uses TipKit (as of Xcode 15 beta 7), to show two different tips:
+This sample app uses TipKit—as of Xcode 15 beta 7—to show two different tips:
 
 - `PickNumbersTip`: presents a tip explaining what the pick numbers button does. Eligibilty for tip display is via `@Parameter` only.
 - `GeneratedNumbersTip`:  presents a tip after the user has generated numbers twice, explains what number generator was used, with the option to find out more. Eligibility for tip display is a combination of `@Parameter` and donated `Event`s.
@@ -15,11 +15,12 @@ Tip configuration is handled at launch:
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .task {
-                    try? Tips.configure([.datastoreLocation(ApplicationTipConfiguration.storeLocation),
-                                        .displayFrequency(ApplicationTipConfiguration.displayFrequency)])
-                }
         }
+    }
+    
+    init() {
+        try? Tips.configure([.datastoreLocation(ApplicationTipConfiguration.storeLocation),
+                                   .displayFrequency(ApplicationTipConfiguration.displayFrequency)])
     }
 ```
 

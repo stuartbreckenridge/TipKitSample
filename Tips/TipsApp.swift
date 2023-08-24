@@ -14,11 +14,12 @@ struct TipsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .task {
-                    try? Tips.configure([.datastoreLocation(ApplicationTipConfiguration.storeLocation),
-                                               .displayFrequency(ApplicationTipConfiguration.displayFrequency)])
-                }
         }
+    }
+    
+    init() {
+        try? Tips.configure([.datastoreLocation(ApplicationTipConfiguration.storeLocation),
+                                   .displayFrequency(ApplicationTipConfiguration.displayFrequency)])
     }
     
 }
